@@ -5842,6 +5842,10 @@ class WindowsTests(BasePlatformTests):
         self.init(testdir, extra_args=['-Db_vscrt=mtd'])
         sanitycheck_vscrt('/MTd')
 
+    def test_modules(self):
+        self.init(os.path.join(self.unit_test_dir, '87 cpp modules'))
+        self.build()
+
 
 @unittest.skipUnless(is_osx(), "requires Darwin")
 class DarwinTests(BasePlatformTests):
